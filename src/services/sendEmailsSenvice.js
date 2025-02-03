@@ -118,8 +118,7 @@ export async function sendEmailsSevices(t) {
 
       const emailModel = {
          from: `${userInfo.nome_funcionario} <${userInfo.email}>`,
-         // to: selectHighSchool(userInfo.to),
-         to: "felipe524.fernandes@gmail.com",
+         to: selectHighSchool(userInfo.to),
          subject: "Justificativa de Ponto",
          text: formatedText,
          html: formatedText,
