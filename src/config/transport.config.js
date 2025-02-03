@@ -1,14 +1,14 @@
 import nodemailer from "nodemailer";
 
-function transporter() {
+function transporter(data) {
+   console.log(data);
+
    try {
       return nodemailer.createTransport({
          service: "gmail",
-         // port: 587,
-         // secure: false,
          auth: {
-            user: process.env.EMAIL_USER || "felipe524.fernandes@gmail.com",
-            pass: process.env.EMAIL_PASSWORD || "vbct wfzx dbmp zsue",
+            user: data.email || process.env.EMAIL_USER,
+            pass: data.passApp || process.env.EMAIL_PASSWORD,
          },
       });
    } catch (error) {

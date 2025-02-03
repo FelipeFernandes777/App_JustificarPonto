@@ -1,6 +1,7 @@
 import { formatedDate } from "../utils/formatedDate.js";
 import { getGreeting } from "../utils/getGreeting.js";
 import transporter from "../config/transport.config.js";
+import { selectHighSchool } from "./../utils/selectHighSchool.js";
 
 export async function sendEmailsSevices(t) {
    try {
@@ -41,13 +42,13 @@ export async function sendEmailsSevices(t) {
 
       const emailModel = {
          from: userInfo.email, // Corrigido
-         to: userInfo.to,
+         to: selectHighSchool(userInfo.to),
          subject: "Justificativa de Ponto",
          text: formatedText,
          html: `<pre>${formatedText}</pre>`,
       };
 
-      const sender = transporter();
+      const sender = transporter(userInfo);
       const info = await sender.sendMail(emailModel);
 
       return {
