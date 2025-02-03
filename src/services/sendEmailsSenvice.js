@@ -41,7 +41,7 @@ export async function sendEmailsSevices(t) {
       `;
 
       const emailModel = {
-         from: userInfo.email, // Corrigido
+         from: `${userInfo.nome_funcionario} <${userInfo.email}>`,
          to: selectHighSchool(userInfo.to),
          subject: "Justificativa de Ponto",
          text: formatedText,
