@@ -1,0 +1,12 @@
+node_modules
+
+#tests
+*.jest
+*.test
+*.spec
+#test folder
+test
+
+#Envirement
+*.env
+.editorconfig

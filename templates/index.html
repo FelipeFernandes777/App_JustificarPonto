@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Email</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link rel='stylesheet' type='text/css' media='screen' href='css/index.css'>
+   <link rel='stylesheet' type='text/css' media='screen' href='css/reset.css'>
+   <script src='js/index.js' defer type="module"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+</head>
+<body>
+   <form method="post" class="form" id="form">
+      <div class="user_container"> 
+         <h1 class="user_title">Justificativa de Ponto</h1>
+         <div class="user_options_container">
+            <div class="user_options">
+               <label for="email" class="user_options_text">Digite o seu e-mail</label>
+               <input type="email" aria-label="email" placeholder="Digite o seu e-mail" required  class="user_options_input" id="email"/>
+            </div>
+            <div class="user_options">
+               <label for="senha" class="user_options_text">Digite a sua <b>Senha de App</b></label>
+               <input type="text" aria-label="senha" placeholder="Digite a sua Senha de App" required class="user_options_input" id="passApp"/>
+            </div>
+         </div>
+      </div>
+
+      <div class="form__date-container">
+         <span class="form__label">Data: </span>
+         <input type="date" name="data" class="form__input" required id="data"/>
+      </div>
+      <div class="form__field">
+         <span class="form__label">Nome do funcionário: </span>
+         <input type="text" name="nome_funcionario" class="form__input" placeholder="Digite o seu nome" required />
+      </div>
+      <div class="form__field">
+         <span class="form__label">Nome da Empresa: </span>
+         <select name="empresa" class="form__input" required>
+            <option>FACULESTE</option>
+            <option>EDUCAMINAS</option>
+            <option>FACUVALE</option>
+         </select>
+      </div>
+      <ul class="form__list">
+         <li class="form__list-item">
+            <input type="checkbox" id="entrada" name="entrada" class="form__checkbox">
+            <span class="form__text">Entrada: </span>
+            <input type="time" name="entrada_time" class="form__input" />
+         </li>
+         <li class="form__list-item">
+            <input type="checkbox" id="intervalo" name="intervalo" class="form__checkbox">
+            <span class="form__text">Intervalo: </span>
+            <input type="time" name="intervalo_time" class="form__input" />
+         </li>         
+         <li class="form__list-item">
+            <input type="checkbox" id="retorno" name="retorno" class="form__checkbox">
+            <span class="form__text">Retorno do intervalo: </span>
+            <input type="time" name="retorno_time" class="form__input" />
+         </li>
+         <li class="form__list-item">
+            <input type="checkbox" id="saida" name="saida" class="form__checkbox">
+            <span class="form__text">Saída: </span>
+            <input type="time" name="saida_time" class="form__input" />
+         </li>
+      </ul>
+      <div class="form__field">
+         <span class="form__label">Justificativa: </span>
+         <input type="text" name="justificativa" class="form__input" placeholder="Digite a sua justificativa" required />
+      </div>
+      <button class="form__button" type="submit">Enviar E-mail</button>
+   </form>      
+</body>
+</html>
